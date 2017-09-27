@@ -109,6 +109,8 @@ int main(int argc, char *argv[])
     }
   }
 
+  fprintf(stderr, "INFO -- there were %lu unique ids\n", num_ids);
+
   while ((l = kseq_read(seq)) >=0) {
     if (++num_seqs % 10000 == 0) {
       fprintf(stderr, "LOG -- reading: %lu\r", num_seqs);
