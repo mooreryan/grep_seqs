@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
 
   unsigned long lineidx = 0;
   while ((fscanf(idsfp, "%s", id) == 1)) {
-    if (++line_idx % 10000 == 0) {
+    if (++lineidx % 10000 == 0) {
       fprintf(stderr, "LOG -- Reading id line %lu\r", lineidx);
     }
 
