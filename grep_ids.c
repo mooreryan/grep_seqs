@@ -90,7 +90,12 @@ int main(int argc, char *argv[])
   kseq_t* seq;
   seq = kseq_init(fastafp);
 
+  unsigned long lineidx = 0;
   while ((fscanf(idsfp, "%s", id) == 1)) {
+    if (++line_idx % 10000 == 0) {
+      fprintf(stderr, "Reading id line -- %lu\r", lineidx);
+    }
+
     id_hash = tommy_strhash_u32(0, id);
     tmpname = tommy_hashlin_search(&ids,
                                    name_compare,
