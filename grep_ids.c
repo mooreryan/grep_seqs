@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
   unsigned long lineidx = 0;
   while ((fscanf(idsfp, "%s", id) == 1)) {
     if (++line_idx % 10000 == 0) {
-      fprintf(stderr, "Reading id line -- %lu\r", lineidx);
+      fprintf(stderr, "LOG -- Reading id line %lu\r", lineidx);
     }
 
     id_hash = tommy_strhash_u32(0, id);
@@ -118,7 +118,7 @@ int main(int argc, char *argv[])
 
   while ((l = kseq_read(seq)) >=0) {
     if (++num_seqs % 10000 == 0) {
-      fprintf(stderr, "LOG -- reading: %lu\r", num_seqs);
+      fprintf(stderr, "LOG -- reading seq %lu\r", num_seqs);
     }
 
     id_hash = tommy_strhash_u32(0, seq->name.s);
