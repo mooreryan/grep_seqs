@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
 
   unsigned long lineidx = 0;
   while ((fscanf(idsfp, "%s", id) == 1)) {
-    if (++lineidx % 10000 == 0) {
+    if (++lineidx % 100000 == 0) {
       fprintf(stderr, "LOG -- Reading id line %lu\r", lineidx);
     }
 
@@ -117,7 +117,7 @@ int main(int argc, char *argv[])
   fprintf(stderr, "INFO -- there were %lu unique ids\n", num_ids);
 
   while ((l = kseq_read(seq)) >=0) {
-    if (++num_seqs % 10000 == 0) {
+    if (++num_seqs % 100000 == 0) {
       fprintf(stderr, "LOG -- reading seq %lu\r", num_seqs);
     }
 
